@@ -1,0 +1,104 @@
+/* About Section */
+.about-section {
+    width: 100%;
+    min-height: 90vh; /* Ensure it covers the full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px; /* Increased padding for more spacing */
+    background-color: black; /* Match the background color of the Home page */
+    color:white; /* Match the text color of the Home page */
+}
+
+.about_section h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 30px; /* Increased margin for more spacing */
+    color: rgb(66, 21, 21); /* Heading color as per requirement */
+    text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
+}
+
+.about_section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 25px 0; /* Increased margin for more spacing */
+    color: rgb(66, 21, 21); /* Heading color as per requirement */
+    text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
+}
+
+.about_section h3 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin: 20px 0; /* Increased margin for more spacing */
+    color: rgb(66, 21, 21); /* Heading color as per requirement */
+    text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
+}
+
+.about_section p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    margin: 15px 0; /* Increased margin for more spacing */
+    color: white;
+    max-width: 800px;
+    line-height: 1.6; /* Improve readability */
+}
+
+.about_section ul {
+    list-style-type: none;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.about_section ul li {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    margin: 10px 0;
+    color: white;
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+}
+
+.about_section ul li::before {
+    content: "•";
+    color: rgb(66, 21, 21);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Add hover effect for list items */
+.about_section ul li:hover {
+    color: rgb(66, 21, 21);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 884px) {
+    .about-section {
+        padding: 20px 10px; /* Adjusted padding for smaller screens */
+    }
+
+    .about-section ul {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 440px) {
+    .about-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-section p,
+    .about-section ul li {
+        font-size: 1rem;
+    }
+}

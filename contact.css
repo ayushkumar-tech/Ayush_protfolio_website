@@ -1,0 +1,223 @@
+/* Updated Navigation Bar */
+nav {
+    background-color: black;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(66, 21, 21, 0.8);
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.logo span {
+    color: rgb(66, 21, 21);
+    text-shadow: 0 0 5px rgba(66, 21, 21, 0.8);
+}
+
+.links {
+    display: flex;
+    gap: 25px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.links a.active, .links a:hover {
+    color: rgb(66, 21, 21);
+    text-shadow: 0 0 10px rgb(66, 21, 21);
+    border-bottom: 3px solid rgb(66, 21, 21);
+}
+
+.hamburg {
+    font-size: 2rem;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 4px 10px rgba(66, 21, 21, 0.8);
+}
+
+.dropdown .links {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.dropdown .links a {
+    display: block;
+    padding: 12px;
+}
+
+.cancel {
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 884px) {
+    .links {
+        display: none;
+    }
+    .hamburg {
+        display: block;
+    }
+    .dropdown.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 25px;
+    background-color: black;
+    color: white;
+}
+
+.contact-section h1, .contact-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 30px;
+    color: rgb(66, 21, 21);
+    text-shadow: 0 0 10px rgb(66, 21, 21);
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.contact-section a {
+    color: rgb(66, 21, 21);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.contact-section a:hover {
+    color: white;
+    text-shadow: 0 0 10px rgb(66, 21, 21);
+}
+
+.contact-section ul {
+    list-style-type: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.contact-section ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: white;
+    position: relative;
+    padding-left: 20px;
+}
+
+.contact-section ul li::before {
+    content: "•";
+    color: rgb(66, 21, 21);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Follow Me Button */
+.follow-me-button {
+    margin-top: 20px;
+}
+
+.follow-me-button button {
+    background-color: rgb(66, 21, 21);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.follow-me-button button:hover {
+    background-color: white;
+    color: rgb(66, 21, 21);
+    box-shadow: 0 0 10px rgb(66, 21, 21);
+}
+
+/* Content Box */
+.content-box {
+    background-color: rgb(66, 21, 21);
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.content-box p {
+    color: white;
+    margin: 10px 0;
+}
+
+@media (max-width: 884px) {
+    .contact-section {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    .contact-section h1 {
+        font-size: 2rem;
+    }
+    .contact-section h2 {
+        font-size: 1.7rem;
+    }
+    .contact-section p, .contact-section ul li {
+        font-size: 1rem;
+    }
+}
