@@ -1,107 +1,75 @@
-/* Updated Navigation Bar */
-nav {
-    background-color: black;
-    padding: 15px 0;
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
     width: 100%;
-    position: fixed;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(66, 21, 21, 0.8);
 }
 
 .nav_container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 90%;
-    margin: auto;
 }
 
 .logo {
+    color: white;
     font-size: 2rem;
     font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
 }
 
 .logo span {
     color: rgb(66, 21, 21);
-    text-shadow: 0 0 5px rgba(66, 21, 21, 0.8);
-}
-
-.links {
-    display: flex;
-    gap: 25px;
+    text-shadow: 0 0 10px rgb(66, 21, 21);
 }
 
 .links a {
-    color: white;
-    text-decoration: none;
+    position: relative;
     font-size: 1.2rem;
-    padding: 10px 15px;
-    transition: all 0.3s ease-in-out;
-}
-
-.links a.active, .links a:hover {
-    color: rgb(66, 21, 21);
-    text-shadow: 0 0 10px rgb(66, 21, 21);
-    border-bottom: 3px solid rgb(66, 21, 21);
-}
-
-.hamburg {
-    font-size: 2rem;
     color: white;
-    display: none;
-    cursor: pointer;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
 }
 
-.dropdown {
-    display: none;
+.links a::before {
     position: absolute;
-    top: 60px;
+    content: "";
+    bottom: -3px;
     left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(66, 21, 21);
+    transition: 0.2s linear;
+}
+
+.links a:hover::before {
     width: 100%;
-    background-color: black;
-    box-shadow: 0 4px 10px rgba(66, 21, 21, 0.8);
 }
 
-.dropdown .links {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
+.links a:hover {
+    color: rgb(66, 21, 21);
 }
-
-.dropdown .links a {
-    display: block;
-    padding: 12px;
-}
-
-.cancel {
-    font-size: 2rem;
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
-@media (max-width: 884px) {
-    .links {
-        display: none;
-    }
-    .hamburg {
-        display: block;
-    }
-    .dropdown.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-    }
-}
-
 /* Contact Section */
 .contact-section {
     width: 100%;

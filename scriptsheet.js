@@ -1,13 +1,15 @@
-// Select DOM elements
+// Select DOM elements safely
 const hamburg = document.querySelector(".hamburg");
 const cancel = document.querySelector(".cancel");
 const dropdown = document.querySelector(".dropdown");
 const mainContent = document.getElementById("main-content");
-const navLinks = document.querySelectorAll(".links a");
+const navLinks = document.querySelectorAll(".dropdown .links a");
 
-// Toggle dropdown menu for mobile
-hamburg.addEventListener("click", () => dropdown.classList.add("active"));
-cancel.addEventListener("click", () => dropdown.classList.remove("active"));
+// Ensure elements exist before adding event listeners
+if (hamburg && cancel && dropdown) {
+    hamburg.addEventListener("click", () => dropdown.classList.add("active"));
+    cancel.addEventListener("click", () => dropdown.classList.remove("active"));
+}
 
 // Page Content Data
 const tabContent = {
@@ -65,22 +67,23 @@ const tabContent = {
 
 // Function to load the selected tab content
 const loadTab = (tab) => {
-    if (tabContent[tab]) {
+    if (tabContent[tab] && mainContent) {
         mainContent.innerHTML = tabContent[tab];
+
+        // Reattach event listener to "Hire Me" button
+        if (tab === "home") {
+            const hireMeBtn = document.querySelector(".hrme button");
+            if (hireMeBtn) {
+                hireMeBtn.addEventListener("click", () => {
+                    window.location.href = "hireme.html";
+                });
+            }
+        }
+
         // Update active state for navigation
         document.querySelector(".links a.active")?.classList.remove("active");
-        document.querySelector(`.links a[data-tab="${tab}"]`)?.classList.add("active");
+        document.querySelector(`.dropdown .links a[data-tab="${tab}"]`)?.classList.add("active");
     }
 };
-
-// Event listener for navigation links
-navLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const tab = link.getAttribute("data-tab");
-        loadTab(tab);
-    });
-});
-
 // Load default Home tab on page load
 document.addEventListener("DOMContentLoaded", () => loadTab("home"));

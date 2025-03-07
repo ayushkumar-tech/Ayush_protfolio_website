@@ -1,3 +1,76 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: rgb(66, 21, 21);
+    text-shadow: 0 0 10px rgb(66, 21, 21);
+}
+
+.links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(66, 21, 21);
+    transition: 0.2s linear;
+}
+
+.links a:hover::before {
+    width: 100%;
+}
+
+.links a:hover {
+    color: rgb(66, 21, 21);
+}
+
 /* About Section */
 .about-section {
     width: 100%;
@@ -9,39 +82,51 @@
     text-align: center;
     padding: 40px 20px; /* Increased padding for more spacing */
     background-color: black; /* Match the background color of the Home page */
-    color:white; /* Match the text color of the Home page */
+    color: white; /* Match the text color of the Home page */
 }
 
-.about_section h1 {
+.about-section h1 {
     font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 30px; /* Increased margin for more spacing */
-    color: rgb(66, 21, 21); /* Heading color as per requirement */
+    margin-bottom: 20px; /* Increased margin for more spacing */
+    color: white; /* Heading color as per requirement */
+}
+
+.about-section h1 span {
+    color: rgb(66, 21, 21); /* Accent color for span */
     text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
 }
 
-.about_section h2 {
+.about-section h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
-    margin: 25px 0; /* Increased margin for more spacing */
-    color: rgb(66, 21, 21); /* Heading color as per requirement */
-    text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
-}
-
-.about_section h3 {
-    font-size: clamp(1.2rem, 3vw, 2rem);
     margin: 20px 0; /* Increased margin for more spacing */
-    color: rgb(66, 21, 21); /* Heading color as per requirement */
+    color: white; /* Heading color as per requirement */
+}
+
+.about-section h2 span {
+    color: rgb(66, 21, 21); /* Accent color for span */
     text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
 }
 
-.about_section p {
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+.about-section h3 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
     margin: 15px 0; /* Increased margin for more spacing */
+    color: white; /* Heading color as per requirement */
+}
+
+.about-section h3 span {
+    color: rgb(66, 21, 21); /* Accent color for span */
+    text-shadow: 0 0 10px rgb(66, 21, 21); /* Add shadow for consistency */
+}
+
+.about-section p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    margin: 10px 0; /* Increased margin for more spacing */
     color: white;
     max-width: 800px;
     line-height: 1.6; /* Improve readability */
 }
 
-.about_section ul {
+.about-section ul {
     list-style-type: none;
     text-align: left;
     max-width: 800px;
@@ -49,7 +134,7 @@
     padding: 0;
 }
 
-.about_section ul li {
+.about-section ul li {
     font-size: clamp(0.9rem, 2vw, 1.2rem);
     margin: 10px 0;
     color: white;
@@ -57,7 +142,7 @@
     padding-left: 20px; /* Space for custom bullet */
 }
 
-.about_section ul li::before {
+.about-section ul li::before {
     content: "•";
     color: rgb(66, 21, 21);
     font-weight: bold;
@@ -67,7 +152,7 @@
 }
 
 /* Add hover effect for list items */
-.about_section ul li:hover {
+.about-section ul li:hover {
     color: rgb(66, 21, 21);
     transform: scale(1.05);
     transition: 0.3s ease;
